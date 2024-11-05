@@ -7,7 +7,7 @@ Se trata de un script desarrollado en python, su objetivo es poder realizar segu
 - Permite listar todas las tareas o según su estado, ej: *pendiente*
 - Crea nuevas tareas
 - Actualiza la descripción de las tareas ya guardadas
-- Permite cambiar el estado de las tareas (pendiente, en_proceso, completado)
+- Permite cambiar el estado de las tareas (`pendiente`, `en_proceso`, `completado`)
 - Elimina tareas
 
 ### Propiedades de la tarea
@@ -21,6 +21,11 @@ Se trata de un script desarrollado en python, su objetivo es poder realizar segu
 ## Instalación
 
 Requiere [Python](https://www.python.org/downloads/) v 3.12 o superior
+```sh
+git clone https://github.com/sergiom968/todo_list_python.git
+cd todo_list_python
+python task-cli.py
+```
 
 ## Uso
 ### Añadir tarea
