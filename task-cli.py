@@ -46,21 +46,21 @@ def listar_tareas(tipo = []):
 
 # Función que añade una nueva tarea
 def anadir_tarea(texto):
-	texto = validar_texto(texto)
+	textp = validar_texto(texto)
 	if not texto: return
 	base_de_datos = obtener_datos()
 	ahora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 	ID = base_de_datos["indice"]
 	base_de_datos["datos"].append({
 		"ID": ID,
-		"descripcion": tarea,
+		"descripcion": textp,
 		"estado": "pendiente",
 		"fecha_creacion": ahora,
 		"fecha_actualizacion": ahora
 	})
 	base_de_datos["indice"] += 1
 	guardar_en_bd(base_de_datos)
-	print(f"Tarea añadida exitosamente (ID: {ID}): {tarea}")
+	print(f"Tarea añadida exitosamente (ID: {ID}): {textp}")
 
 # Función que actualiza el estado de una tarea según el parámetro ID
 def marcar_tarea(tipo, id_tarea):
@@ -158,7 +158,7 @@ detectar_archivo(ARCHIVO_JSON)
 
 # Loop que escucha permanentementa la entrada del usuario
 while True:
-	# try:
+	try:
 		_entrada = input("task-cli$: ") # Entrada del usuario
 		entrada, *argumentos = _entrada.split(" ") # Obtiene el valor de la entrada y los argumentos
 		os.system("clear") # Limpia la consola
@@ -185,5 +185,5 @@ while True:
 			print("Ayuda")
 		else:
 			print(f"Comando: {entrada} no encontrado, digite 'ayuda' para obtener más información")
-	# except:
-	# 	print("Se ha presentado un error")
+	except:
+		print("Se ha presentado un error, intente nuevamente")
