@@ -52,3 +52,6 @@ marcar-<nuevo_estado> <ID>
 eliminar <ID> 
 ```
 **"ID"** corresponde al ID de la tarea a eliminar
+
+## Agradecimientos:
+  Proyecto realizado como parte del roadmap de Backend de [Roadmap.sh](https://roadmap.sh/projects/task-tracker)
