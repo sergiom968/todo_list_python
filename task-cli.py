@@ -46,21 +46,21 @@ def listar_tareas(tipo = []):
 
 # Función que añade una nueva tarea
 def anadir_tarea(texto):
-	textp = validar_texto(texto)
+	texto = validar_texto(texto)
 	if not texto: return
 	base_de_datos = obtener_datos()
 	ahora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 	ID = base_de_datos["indice"]
 	base_de_datos["datos"].append({
 		"ID": ID,
-		"descripcion": textp,
+		"descripcion": texto,
 		"estado": "pendiente",
 		"fecha_creacion": ahora,
 		"fecha_actualizacion": ahora
 	})
 	base_de_datos["indice"] += 1
 	guardar_en_bd(base_de_datos)
-	print(f"Tarea añadida exitosamente (ID: {ID}): {textp}")
+	print(f"Tarea añadida exitosamente (ID: {ID}): {texto}")
 
 # Función que actualiza el estado de una tarea según el parámetro ID
 def marcar_tarea(tipo, id_tarea):
